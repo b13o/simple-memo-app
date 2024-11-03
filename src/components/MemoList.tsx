@@ -2,6 +2,8 @@ import { Memo, Reply } from "../types";
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 import Editor from "./Editor";
+import ContentBody from "./ContentBody";
+import ReplyList from "./ReplyList";
 
 type MemoListProps = {
   memos: Memo[];
@@ -64,13 +66,22 @@ const MemoList = (props: MemoListProps) => {
           ) : (
             <div className="space-y-4">
               {/* ContentBody */}
-              {memo.text}
+              <ContentBody
+                type="memo"
+                content={memo}
+                onDelete={deleteMemo}
+                startEdit={startEdit}
+              />
               <hr />
               <div className="ml-8 space-y-4">
                 {/* ReplyList */}
-                {getRepliesForMemo(memo.id).map((reply) => (
-                  <p key={reply.id}>{reply.text}</p>
-                ))}
+                <ReplyList
+                  replies={getRepliesForMemo(memo.id)}
+                  setReplies={setReplies}
+                  startEdit={startEdit}
+                  editingTo={editingTo}
+                  setEditingTo={setEditingTo}
+                />
                 {replyingTo === memo.id ? (
                   <Editor onSubmit={addReply} placeholder="リプライを入力..." />
                 ) : (
