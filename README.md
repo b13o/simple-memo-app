@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+![memp app](https://github.com/user-attachments/assets/61e762b5-0d55-4691-8f58-2678f32d0f21)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ランダム名言ジェネレータ
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+このプロジェクトでは、ミニマリスト風のメモアプリを構築します。
+GitHub や Zenn にあるような、スクラップ形式で、直感的にメモを追加できるアプリです。
 
-## Expanding the ESLint configuration
+## 学習目標
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+React の基本的な Hook である、useState による状態管理を学習します。
 
-- Configure the top-level `parserOptions` property like this:
+特に、state 内の配列・オブジェクトをイミュータブルに扱う方法を、確認してください。
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 推奨技術
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+このプロジェクトの難易度と趣旨を踏まえて、以下の使用をお勧めします。
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- useState フックによる状態管理
+- vite を用いた React 環境構築
+- Tailwind CSS を用いたスタイリング
+- TypeScript による型チェック
+- GitHub Pages へのデプロイ
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## 🎯 お題
+
+- 「ユーザーストーリー」を全て満たす、アプリを構築してください。
+- 必要に応じて、スクリーンショットやデモサイトの URL を、参照してください。
+- なお、スタイルは、あなた自身で独自にカスタマイズすることが可能です。
+
+### 必須機能
+
+1. **メモ**:
+   - メモの CRUD（作成・表示・編集・削除）
+2. **リプライ**:
+   - メモに紐付いたリプライの CRUD（作成・表示・編集・削除）
+
+## ユーザーストーリー
+
+- メモ：
+  - [ ] フォームに文字を入力し、ボタンをクリックすると、メモを追加できる
+  - [ ] 追加したメモには、編集・削除・吹き出しのボタンが、アイコンで表示されている
+  - [ ] 削除ボタンを押すと、メモは削除される
+  - [ ] メモが削除されたら、それに紐ずくリプライも削除される
+  - [ ] 編集ボタンを押すと、編集フォームが表示され、メモの内容を更新できる
+- リプライ：
+  - [ ] 吹き出しのボタンをクリックすると、メモに対するリプライを追加できる
+  - [ ] 追加したリプライには、編集・削除のボタンが、アイコンで表示されている
+  - [ ] 削除ボタンを押すと、リプライは削除される
+  - [ ] 編集ボタンを押すと、編集フォームが表示され、リプライの内容を更新できる
+- その他：
+  - [ ] ユーザーとしてサイトにアクセスしたときに、メモのフォームが表示されている
+  - [ ] ユーザーとしてサイトにアクセスしたときに、サイトの概要を説明するメモが１つ表示されている
+  - [ ] アプリケーションがデプロイされており、誰でもアクセス可能である。
