@@ -1,6 +1,6 @@
 ![memp app](https://github.com/user-attachments/assets/61e762b5-0d55-4691-8f58-2678f32d0f21)
 
-# ランダム名言ジェネレータ
+# シンプルメモアプリ
 
 ## 概要
 
