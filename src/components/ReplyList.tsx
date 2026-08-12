@@ -1,4 +1,4 @@
-import { Reply } from "../types";
+import type { Reply } from "../types";
 import ContentBody from "./ContentBody";
 import Editor from "./Editor";
 
@@ -19,8 +19,8 @@ const ReplyList = (props: ReplyListProps) => {
     if (inputText.trim() && editingTo) {
       setReplies(
         replies.map((reply) =>
-          reply.id === editingTo.id ? { ...reply, text: inputText } : reply
-        )
+          reply.id === editingTo.id ? { ...reply, text: inputText } : reply,
+        ),
       );
       setEditingTo(null);
     }

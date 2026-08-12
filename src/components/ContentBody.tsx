@@ -1,5 +1,5 @@
 import { Edit2, Trash2 } from "lucide-react";
-import { Memo, Reply } from "../types";
+import type { Memo, Reply } from "../types";
 
 type ContentBodyProps = {
   content: Memo | Reply;

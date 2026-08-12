@@ -1,8 +1,8 @@
 import Layout from "./components/Layout";
-import { useState } from "react";
-import { Memo } from "./types";
 import Editor from "./components/Editor";
 import MemoList from "./components/MemoList";
+import { useState } from "react";
+import type { Memo } from "./types";
 
 const initialMemo = {
   id: Date.now(),
@@ -10,7 +10,7 @@ const initialMemo = {
   timestamp: new Date().toLocaleString("ja-JP"),
 };
 
-function App(): JSX.Element {
+function App() {
   const [memos, setMemos] = useState<Memo[]>([initialMemo]);
 
   const addMemo = (inputText: string) => {
@@ -33,6 +33,7 @@ function App(): JSX.Element {
           onSubmit={addMemo}
         />
       </div>
+
       <MemoList memos={memos} setMemos={setMemos} />
     </Layout>
   );

@@ -1,4 +1,4 @@
-import { Memo, Reply } from "../types";
+import type { Memo, Reply } from "../types";
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 import Editor from "./Editor";
@@ -22,8 +22,8 @@ const MemoList = (props: MemoListProps) => {
     if (inputText.trim() && editingTo) {
       props.setMemos(
         props.memos.map((memo) =>
-          memo.id === editingTo.id ? { ...memo, text: inputText } : memo
-        )
+          memo.id === editingTo.id ? { ...memo, text: inputText } : memo,
+        ),
       );
       setEditingTo(null);
     }
@@ -72,7 +72,7 @@ const MemoList = (props: MemoListProps) => {
                 onDelete={deleteMemo}
                 startEdit={startEdit}
               />
-              <hr />
+              <hr className="border-gray-300" />
               <div className="ml-8 space-y-4">
                 {/* ReplyList */}
                 <ReplyList

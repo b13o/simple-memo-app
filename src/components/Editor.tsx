@@ -8,7 +8,7 @@ type EditorProps = {
   onSubmit: (content: string) => void;
 };
 
-const Editor = (props: EditorProps): JSX.Element => {
+const Editor = (props: EditorProps) => {
   const { initialValue = "", placeholder = "", type = "border" } = props;
   const [inputText, setinputText] = useState(initialValue);
 
@@ -20,8 +20,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         placeholder={placeholder}
         className={
           type === "border"
-            ? "w-full rounded-lg p-2 border"
-            : "w-full rounded-lg p-4 shadow-lg"
+            ? "bg-white w-full rounded-lg p-2 border border-gray-300"
+            : "bg-white w-full rounded-lg p-4 shadow-lg"
         }
         rows={type === "border" ? 3 : 4}
       />
